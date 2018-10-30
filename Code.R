@@ -42,7 +42,7 @@ rm(vY, vm, sl, av, G, pa, court)
 
 #Are drivers licence holders from the state of Florida more prone to accidents or getting tickets? 
 require(sqldf)
-
+sqldf::sqldf
 #Are drivers worse in the following counties NASSU, SUFFOLK, NYC based on Ticket data? 
 
 #Are men worse drivers than females? 
