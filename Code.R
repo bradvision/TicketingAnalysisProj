@@ -24,5 +24,8 @@ av <- data.table(table(tdf$`Age at Violation`))
 G <- data.table(table(tdf$Gender))
 pa <- data.table(table(tdf$`Police Agency`))
 court <- data.table(table(tdf$Court))
+<<<<<<< HEAD
 
 rm(vY, vm, sl, av, G, pa, court)
+=======
+>>>>>>> 36068e2d57330160a8be2e403a0a8b013d8f9a29
