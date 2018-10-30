@@ -29,13 +29,19 @@ G <- data.table(table(tdf$Gender))
 pa <- data.table(table(tdf$`Police Agency`))
 court <- data.table(table(tdf$Court))
 day <- data.table(table(tdf$`Violation Day of Week`))
-#Plotting
+#Basic Plotting
 
+#rm is to delete the tables on the right
 rm(vY, vm, sl, av, G, pa, court)
-
+###################################################
 #Binning the Age
 
+#Training 70%
+
+#Test 30%
+
 #Are drivers licence holders from the state of Florida more prone to accidents or getting tickets? 
+require(sqldf)
 
 #Are drivers worse in the following counties NASSU, SUFFOLK, NYC based on Ticket data? 
 
