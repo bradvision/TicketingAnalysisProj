@@ -25,3 +25,4 @@ G <- data.table(table(tdf$Gender))
 pa <- data.table(table(tdf$`Police Agency`))
 court <- data.table(table(tdf$Court))
 
+test<-cat("it works")
