@@ -24,3 +24,4 @@ av <- data.table(table(tdf$`Age at Violation`))
 G <- data.table(table(tdf$Gender))
 pa <- data.table(table(tdf$`Police Agency`))
 court <- data.table(table(tdf$Court))
+
