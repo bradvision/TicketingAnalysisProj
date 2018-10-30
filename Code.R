@@ -1,7 +1,10 @@
-install.packages("readr")
-install.packages("VIM")
-install.packages("tidyverse")
-install.packages("data.table")
+#The following data is from the Data.gov the tdf is the Traffic Tick Issued within a four year window
+#https://catalog.data.gov/dataset/traffic-tickets-issued-beginning-2008
+
+#install.packages("readr")
+#install.packages("tidyverse")
+#install.packages("VIM")
+#install.packages("data.table")
 
 library(readr)
 library(VIM)
@@ -10,6 +13,7 @@ library(data.table)
 
 #importing the Traffic_Tickets_Issued__Four_Year_Window
 tdf <- read_csv(file.choose())
+#mdf <- read_csv(file.choose())
 
 class(tdf)
 str(tdf)
@@ -24,8 +28,18 @@ av <- data.table(table(tdf$`Age at Violation`))
 G <- data.table(table(tdf$Gender))
 pa <- data.table(table(tdf$`Police Agency`))
 court <- data.table(table(tdf$Court))
-<<<<<<< HEAD
+day <- data.table(table(tdf$`Violation Day of Week`))
+#Plotting
 
 rm(vY, vm, sl, av, G, pa, court)
-=======
->>>>>>> 36068e2d57330160a8be2e403a0a8b013d8f9a29
+
+#Binning the Age
+
+#Are drivers licence holders from the state of Florida more prone to accidents or getting tickets? 
+
+#Are drivers worse in the following counties NASSU, SUFFOLK, NYC based on Ticket data? 
+
+#Are men worse drivers than females? 
+
+
+
