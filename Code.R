@@ -86,6 +86,13 @@ rm(vY, vm, sl, av, G, pa, court)
 
 
 
+###############################################################################################
+# SVM
+#   TODO:  
+###############################################################################################
+
+
+
 
 #Are drivers licence holders from the state of Florida more prone to getting tickets? 
 #log regression 10 fold 
