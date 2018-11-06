@@ -86,15 +86,21 @@ rm(vY, vm, sl, av, G, pa, court)
 
 
 ###############################################################################################
+<<<<<<< HEAD
 # ARULES MINING
 #   TODO: create a list of arules to categorize types of drivers getting tickets, feed data from
 #   -other models
+=======
+# ASSOCATION RULES MINING
+#   TODO: create a list of arules to categorize types of drivers getting ticket, feed data from
+#   - other models.
+>>>>>>> 831aae95b89c17d6effdda45777860e0878a6925
 ###############################################################################################
 
 
 
 ###############################################################################################
-# SVM
+# SUPPORT VECTOR MACHINE
 #   TODO:  
 ###############################################################################################
 
