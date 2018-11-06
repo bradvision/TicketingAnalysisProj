@@ -40,9 +40,13 @@ rm(vY, vm, sl, av, G, pa, court)
 
 #Test 30%
 
-#Are drivers licence holders from the state of Florida more prone to accidents or getting tickets? 
+#Decision Tree to predict whether the driver will have an accident or not?
+
+#Are drivers licence holders from the state of Florida more prone to getting tickets? 
+#log regression 10 fold 
+# explain how much of the probability someone is ticketed is explained by their home state
 require(sqldf)
-sqldf::sqldf
+df <-sqldf::sqldf
 #Are drivers worse in the following counties NASSU, SUFFOLK, NYC based on Ticket data? 
 
 #Are men worse drivers than females? 
