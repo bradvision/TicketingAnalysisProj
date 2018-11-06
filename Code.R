@@ -18,7 +18,7 @@
 #install.packages("VIM")
 #install.packages("data.table")
 #install.packages("ggplot2")
-#install.packages("sqldf")
+#install.packages("sqldf")  
 #install.packages("e1071")
 #install.packages("arules")
 #install.packages("arulesViz")
@@ -87,7 +87,8 @@ rm(vY, vm, sl, av, G, pa, court)
 
 ###############################################################################################
 # ARULES MINING
-#   TODO: create a list of arules to categorize types of drivers getting tickets 
+#   TODO: create a list of arules to categorize types of drivers getting tickets, feed data from
+#   -other models
 ###############################################################################################
 
 
