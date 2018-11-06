@@ -30,7 +30,8 @@ pa <- data.table(table(tdf$`Police Agency`))
 court <- data.table(table(tdf$Court))
 day <- data.table(table(tdf$`Violation Day of Week`))
 #Basic Plotting
-
+require(ggplot2)
+pie(vY$N)
 #rm is to delete the tables on the right
 rm(vY, vm, sl, av, G, pa, court)
 ###################################################
@@ -46,10 +47,9 @@ rm(vY, vm, sl, av, G, pa, court)
 #log regression 10 fold 
 # explain how much of the probability someone is ticketed is explained by their home state
 require(sqldf)
-df <-sqldf::sqldf
+df <-sqldf::sqldf()
 #Are drivers worse in the following counties NASSU, SUFFOLK, NYC based on Ticket data? 
 
 #Are men worse drivers than females? 
 
-
-
+#Is there an evidence of a quota on tickets based on the data? 
