@@ -1,6 +1,7 @@
 ###############################################################################################
 # IST 707 Final Project 
-# AUTHORS: 
+# AUTHORS: Bradley Choi
+# AUTHORS: Nicholas Brown
 # DATE CREATED: 10/30/2018
 #
 # The following data used is from the Data.gov the tdf is the Traffic Tick Issued within a four 
