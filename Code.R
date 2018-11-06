@@ -95,4 +95,3 @@ df <-sqldf::sqldf()
 
 #Are men worse drivers than females? 
 
-#Is there an evidence of a quota on tickets based on the data? 
