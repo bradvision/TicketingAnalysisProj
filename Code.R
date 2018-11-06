@@ -49,6 +49,9 @@ require(ggplot2)
 pie(vY$N)
 #rm is to delete the tables on the right
 rm(vY, vm, sl, av, G, pa, court)
+
+###################################################
+# SPLITTING DATA INTO TRAINING AND TEST SETS
 ###################################################
 #Binning the Age
 
