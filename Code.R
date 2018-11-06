@@ -41,7 +41,28 @@ rm(vY, vm, sl, av, G, pa, court)
 
 #Test 30%
 
-#Decision Tree to predict whether the driver will have an accident or not?
+###############################################################################################
+# DECISION TREE
+#   TODO: create a decision Tree to predict whether the driver will have an accident or not
+###############################################################################################
+
+
+
+###############################################################################################
+# MULTINOMIAL NAIVE BAYES
+#   TODO: Can we predict drivers licence holders from the state of Florida more prone to 
+#   getting tickets?
+###############################################################################################
+
+
+
+###############################################################################################
+# ARULES MINING
+#   TODO: create a list of arules to categorize types of drivers getting tickets 
+###############################################################################################
+
+
+
 
 #Are drivers licence holders from the state of Florida more prone to getting tickets? 
 #log regression 10 fold 
