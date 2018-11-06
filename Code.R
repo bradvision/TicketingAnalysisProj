@@ -17,11 +17,15 @@
 #install.packages("tidyverse")
 #install.packages("VIM")
 #install.packages("data.table")
+#install.packages("ggplot2")
+#install.packages("sqldf")
 
 library(readr)
 library(VIM)
 library(tidyverse)
 library(data.table)
+library(ggplot2)
+library(sqldf)
 
 ###############################################################################################
 # DATA IMPORT AND PREPROCESSING
@@ -48,7 +52,7 @@ day <- data.table(table(tdf$`Violation Day of Week`))
 #Basic Plotting
 require(ggplot2)
 pie(vY$N)
-#rm is to delete the tables on the right
+#Clean Up
 rm(vY, vm, sl, av, G, pa, court)
 
 ###################################################
@@ -86,7 +90,6 @@ rm(vY, vm, sl, av, G, pa, court)
 #Are drivers licence holders from the state of Florida more prone to getting tickets? 
 #log regression 10 fold 
 # explain how much of the probability someone is ticketed is explained by their home state
-require(sqldf)
 df <-sqldf::sqldf()
 #Are drivers worse in the following counties NASSU, SUFFOLK, NYC based on Ticket data? 
 
