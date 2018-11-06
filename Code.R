@@ -1,5 +1,16 @@
-#The following data is from the Data.gov the tdf is the Traffic Tick Issued within a four year window
-#https://catalog.data.gov/dataset/traffic-tickets-issued-beginning-2008
+###############################################################################################
+# IST 707 Final Project 
+# AUTHORS: 
+# DATE CREATED: 10/30/2018
+#
+# The following data used is from the Data.gov the tdf is the Traffic Tick Issued within a four 
+# -year window https://catalog.data.gov/dataset/traffic-tickets-issued-beginning-2008
+###############################################################################################
+
+
+###############################################################################################
+# PACKAGES
+###############################################################################################
 
 #install.packages("readr")
 #install.packages("tidyverse")
@@ -10,6 +21,10 @@ library(readr)
 library(VIM)
 library(tidyverse)
 library(data.table)
+
+###############################################################################################
+# DATA IMPORT AND PREPROCESSING
+###############################################################################################
 
 #importing the Traffic_Tickets_Issued__Four_Year_Window
 tdf <- read_csv(file.choose())
