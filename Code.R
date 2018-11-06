@@ -19,14 +19,19 @@
 #install.packages("data.table")
 #install.packages("ggplot2")
 #install.packages("sqldf")
+#install.packages("e1071")
+#install.packages("arules")
+#install.packages("arulesViz")
 
+library(arules)
+library(arulesViz)
 library(readr)
 library(VIM)
 library(tidyverse)
 library(data.table)
 library(ggplot2)
 library(sqldf)
-
+library(e1071)
 ###############################################################################################
 # DATA IMPORT AND PREPROCESSING
 ###############################################################################################
