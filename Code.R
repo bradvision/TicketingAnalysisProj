@@ -58,15 +58,23 @@ df <- sqldf::sqldf("select *
 summary(df)
 a<-aggr(df)
 a
+#Removing unecessary Column
+df$`Transported By` <- NULL
+#changing Column Names
+names(df)[1:18] <- c("Year", "Violation_Description", "Violation_Code", "Case_Individual_ID", "Year_5", "Case_Individual_ID_6", "Case_Vehicle_ID", "Victim_Status", "Role_Type", "Seating_Position", "Ejection", "License_State_Code", "Sex", "Safety_Equipment", "Injury_Descriptor", "Injury_Location", "Injury_Severity", "Age")
+colnames(df)
+
 #exporting the data
 data.table::fwrite(df, "Identity&Violation.csv")
 
+#£oining two entities with the same keys 
 ndf <- sqldf::sqldf("select *
-                   from idf join vidf ON idf.'Case Vehicle ID' = vidf.'Case Vehicle ID'
-                   ")
+                    from idf join vidf ON idf.'Case Vehicle ID' = vidf.'Case Vehicle ID'
+                    ")
 summary(ndf)
 b <- aggr(ndf)
 b
+
 rm(cdf, idf, vdf, vidf, ndf)
 #Basic preliminary analysis of the data. 
 #Basic Plotting
