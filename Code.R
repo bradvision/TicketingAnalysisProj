@@ -37,29 +37,40 @@ library(e1071)
 # DATA IMPORT AND PREPROCESSING
 ###############################################################################################
 
-#importing the Traffic_Tickets_Issued__Four_Year_Window
-tdf <- read_csv(file.choose())
-#mdf <- read_csv(file.choose())
+#importing the Case Information Three Year_Window
+cdf <- read_csv(file.choose())
+#importing the Individual Information Three Year_Window
+idf <- read_csv(file.choose())
+#importing the Vehicle Information Three Year_Window
+vidf <- read_csv(file.choose())
+#importing the Violation Information Three Year_Window
+vdf <- read_csv(file.choose())
 
-class(tdf)
-str(tdf)
-colnames(tdf)
-summary(tdf)
+colnames(cdf)
+colnames(idf)
+colnames(vidf)
+colnames(vdf)
 
+#£oining two entities with the same keys
+df <- sqldf::sqldf("select *
+                   from vdf join idf ON idf.'Case Individual ID' = vdf.'Case Individual ID'
+                   ")
+summary(df)
+a<-aggr(df)
+a
+#exporting the data
+data.table::fwrite(df, "Identity&Violation.csv")
+
+ndf <- sqldf::sqldf("select *
+                   from idf join vidf ON idf.'Case Vehicle ID' = vidf.'Case Vehicle ID'
+                   ")
+summary(ndf)
+b <- aggr(ndf)
+b
+rm(cdf, idf, vdf, vidf, ndf)
 #Basic preliminary analysis of the data. 
-vY<- data.table(table(tdf$`Violation Year`))
-vm <- data.table(table(tdf$`Violation Month`))
-sl <-data.table(table(tdf$`State of License`))
-av <- data.table(table(tdf$`Age at Violation`))
-G <- data.table(table(tdf$Gender))
-pa <- data.table(table(tdf$`Police Agency`))
-court <- data.table(table(tdf$Court))
-day <- data.table(table(tdf$`Violation Day of Week`))
 #Basic Plotting
-require(ggplot2)
-pie(vY$N)
 #Clean Up
-rm(vY, vm, sl, av, G, pa, court)
 
 ###################################################
 # SPLITTING DATA INTO TRAINING AND TEST SETS
@@ -74,7 +85,6 @@ rm(vY, vm, sl, av, G, pa, court)
 # DECISION TREE
 #   TODO: create a decision Tree to predict whether the driver will have an accident or not
 ###############################################################################################
-
 
 
 ###############################################################################################
