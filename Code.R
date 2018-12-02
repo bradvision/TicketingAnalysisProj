@@ -51,35 +51,47 @@ colnames(idf)
 colnames(vidf)
 colnames(vdf)
 
-#£oining two entities with the same keys
+#Joining two entities with the same keys
 df <- sqldf::sqldf("select *
                    from vdf join idf ON idf.'Case Individual ID' = vdf.'Case Individual ID'
                    ")
 summary(df)
 a<-aggr(df)
 a
-#Removing unecessary Column
-df$`Transported By` <- NULL
+#seeing the Colnames
+colnames(df)
 #changing Column Names
-names(df)[1:18] <- c("Year", "Violation_Description", "Violation_Code", "Case_Individual_ID", "Year_5", "Case_Individual_ID_6", "Case_Vehicle_ID", "Victim_Status", "Role_Type", "Seating_Position", "Ejection", "License_State_Code", "Sex", "Safety_Equipment", "Injury_Descriptor", "Injury_Location", "Injury_Severity", "Age")
+names(df)[1:19] <- c("Year", "Violation_Description", "Violation_Code", 
+                     "Case_Individual_ID", "Year_5", "Case_Individual_ID_6", 
+                     "Case_Vehicle_ID", "Victim_Status", "Role_Type", "Seating_Position", 
+                     "Ejection", "License_State_Code", "Sex", "Transported_By", "Safety_Equipment", 
+                     "Injury_Descriptor", "Injury_Location", "Injury_Severity", "Age")
+colnames(df)
+#Removing unecessary Column
+df$Transported_By <- NULL
+#confirmation
+colnames(df)
+#Removing redundant attributes
+df$Year <- NULL
+df$Year_5 <- NULL
+df$Violation_Code <- NULL 
+df$Case_Individual_ID <- NULL
+df$Case_Individual_ID_6 <- NULL
+df$Case_Vehicle_ID <- NULL
+#confirmation
 colnames(df)
 
 #exporting the data
 data.table::fwrite(df, "Identity&Violation.csv")
-
-#£oining two entities with the same keys 
-ndf <- sqldf::sqldf("select *
-                    from idf join vidf ON idf.'Case Vehicle ID' = vidf.'Case Vehicle ID'
-                    ")
-summary(ndf)
-b <- aggr(ndf)
-b
-
-rm(cdf, idf, vdf, vidf, ndf)
-#Basic preliminary analysis of the data. 
-#Basic Plotting
-#Clean Up
-
+#testing
+#ndf <- sqldf::sqldf("select *
+#                   from idf join vidf ON idf.'Case Vehicle ID' = vidf.'Case Vehicle ID'
+#                   ")
+#summary(ndf)
+#b <- aggr(ndf)
+#b
+rm(cdf, idf, vdf, vidf)
+rm(a)
 ###################################################
 # SPLITTING DATA INTO TRAINING AND TEST SETS
 ###################################################
